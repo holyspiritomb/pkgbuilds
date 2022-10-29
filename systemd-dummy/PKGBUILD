@@ -1,0 +1,17 @@
+# Maintainer: Hezekiah Michael <github.culpel@aleeas.com>
+pkgname=systemd-dummy
+pkgver=251.7
+pkgrel=1
+pkgdesc="Dummy package to fake systemd being installed in TermuxArch"
+arch=("any")
+# url="http://github.com/holyspiritomb/pkgbuilds"
+license=("MIT")
+provides=("systemd" "systemd-sysvcompat")
+conflicts=("systemd" "systemd-sysvcompat")
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+noextract=()
+validpgpkeys=()

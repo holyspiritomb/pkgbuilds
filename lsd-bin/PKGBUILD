@@ -1,0 +1,29 @@
+# Maintainer: Hezekuah Michael <spiritomb 𝚊𝚝 protonmail 𝚍𝚘𝚝 com>
+# Contributor: Art Dev <artdevjs at gmail dot com>
+pkgname=lsd-bin
+_pkgname="lsd"
+pkgver=0.23.1
+pkgrel=1
+pkgdesc="The next gen ls command"
+arch=("x86_64" "aarch64")
+url="https://github.com/Peltoche/lsd"
+license=("Apache")
+provides=("lsd")
+conflicts=("lsd" "lsd-git")
+source_aarch64=(
+  "https://github.com/Peltoche/lsd/releases/download/${pkgver}/${_pkgname}-${pkgver}-aarch64-unknown-linux-gnu.tar.gz"
+)
+source_x86_64=(
+  "https://github.com/Peltoche/lsd/releases/download/${pkgver}/${_pkgname}-${pkgver}-x86_64-unknown-linux-gnu.tar.gz"
+)
+
+package(){
+  install -Dm755 ${srcdir}/${_pkgname}-${pkgver}-${CARCH}-unknown-linux-gnu/${_pkgname} "${pkgdir}/usr/bin/${_pkgname}"
+
+  install -Dm644 ${srcdir}/${_pkgname}-${pkgver}-${CARCH}-unknown-linux-gnu/${_pkgname}.1 "${pkgdir}/usr/share/man/man1/${_pkgname}.1"
+  install -Dm644 ${srcdir}/${_pkgname}-${pkgver}-${CARCH}-unknown-linux-gnu/autocomplete/${_pkgname}.bash-completion "${pkgdir}/usr/share/bash-completion/completions/${_pkgname}"
+  install -Dm644 ${srcdir}/${_pkgname}-${pkgver}-${CARCH}-unknown-linux-gnu/autocomplete/_${_pkgname} "${pkgdir}/usr/share/zsh/site-functions/_${_pkgname}"
+}
+
+sha256sums_x86_64=('4149357b25333d6ef43ed71226e898acfe9ba0199e42d41dceea92da5a4b231d')
+sha256sums_aarch64=('5abd173e70f7d68c8ce4dddf37a0f333077e1517db6c0585221852f3fd6cb10a')

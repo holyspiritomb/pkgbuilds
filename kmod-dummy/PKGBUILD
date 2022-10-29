@@ -1,0 +1,17 @@
+# Maintainer: Hezekiah Michael <github.culpel@aleeas.com>
+pkgname=kmod-dummy
+pkgver=30
+pkgrel=1
+pkgdesc="Dummy package to fake kmod being installed in TermuxArch"
+arch=("any")
+# url="http://github.com/holyspiritomb/pkgbuilds"
+license=("MIT")
+provides=("kmod")
+conflicts=("kmod")
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+noextract=()
+validpgpkeys=()
